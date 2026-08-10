@@ -179,7 +179,7 @@ export default function Home() {
       <section id="profesionales" className="professional section-shell">
         <div className="professional-title reveal">
           <p className="eyebrow">Profesionales CHARME</p>
-          <h2>Experiencia real,<br />conocimiento que se comparte.</h2>
+          <h2>Experiencia real, conocimiento que se comparte.</h2>
         </div>
         <div className="portrait reveal"><Image src="/images/mirta.webp" alt="Mirta Mena" fill sizes="(max-width: 800px) 100vw, 38vw" /></div>
         <div className="professional-copy reveal">

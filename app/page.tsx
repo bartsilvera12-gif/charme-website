@@ -259,8 +259,12 @@ export default function Home() {
           <div><h3>Academia</h3><a href="#academia">Sobre nosotros</a><a href="#profesionales">Profesionales</a></div>
           <div><h3>Formaciones</h3><a href="#formaciones">Todos los cursos</a><button onClick={() => openAuth("login")}>Área del alumno</button></div>
           <div><h3>Contacto</h3><a href="https://wa.me/595986373130" target="_blank" rel="noreferrer">WhatsApp</a><span>Paraguay</span></div>
+          <div><h3>Legal</h3><a href="/politica-de-privacidad">Política de privacidad</a></div>
         </div>
-        <div className="copyright">© Academia CHARME. Todos los derechos reservados.</div>
+        <div className="copyright">
+          <span>© Academia CHARME. Todos los derechos reservados.</span>
+          <span className="dev-credit">Desarrollado por <a href="https://neura.com.py" target="_blank" rel="noreferrer">Neura</a></span>
+        </div>
       </footer>
 
       {loginOpen && (

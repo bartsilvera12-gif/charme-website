@@ -176,18 +176,55 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="profesionales" className="professional section-shell">
-        <div className="professional-title reveal">
-          <p className="eyebrow">Profesionales CHARME</p>
-          <h2>Experiencia real, conocimiento que se comparte.</h2>
-        </div>
-        <div className="portrait reveal"><Image src="/images/mirta.webp" alt="Mirta Mena" fill sizes="(max-width: 800px) 100vw, 38vw" /></div>
-        <div className="professional-copy reveal">
-          <p className="eyebrow">Master artist</p>
-          <h3>Mirta Mena</h3>
-          <p>Una propuesta de formación nacida del oficio, la práctica y la búsqueda constante de excelencia.</p>
-        </div>
-      </section>
+     <section id="profesionales" className="professional section-shell">
+  <div className="professional-visual reveal">
+    <span className="professional-frame" aria-hidden="true" />
+
+    <div className="portrait">
+      <Image
+        src="/images/mirta.webp"
+        alt="Mirta Mena"
+        fill
+        sizes="(max-width: 800px) 100vw, 42vw"
+      />
+    </div>
+  </div>
+
+  <div className="professional-copy reveal">
+    <span className="professional-index" aria-hidden="true">
+      01
+    </span>
+
+    <p className="eyebrow">Profesionales CHARME</p>
+
+    <h2>
+      Experiencia real,
+      <br />
+      conocimiento que
+      <br />
+      se comparte.
+    </h2>
+
+    <div className="professional-identity">
+      <p className="eyebrow">Master artist</p>
+      <h3>Mirta Mena</h3>
+
+      <span className="professional-rule" aria-hidden="true" />
+
+      <p className="professional-description">
+        Una propuesta de formación nacida del oficio, la práctica y la
+        búsqueda constante de excelencia.
+      </p>
+
+      <Link
+        href="/nosotros"
+        className="button button-outline professional-cta"
+      >
+        Conocer su trayectoria
+      </Link>
+    </div>
+  </div>
+</section>
 
       <section className="online">
         <div className="online-copy reveal">

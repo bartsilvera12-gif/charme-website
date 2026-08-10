@@ -22,6 +22,47 @@ const courses = [
   { name: "Maquillaje avanzado", price: "Gs. 350.000", image: "/images/maquillaje-avanzado.webp" },
 ];
 
+const testimonials = [
+  { name: "Ana Giménez", username: "@ana.g", body: "Los cursos me cambiaron la forma de trabajar. Práctica pura y bien explicada.", img: "https://randomuser.me/api/portraits/women/32.jpg", country: "🇵🇾 Paraguay" },
+  { name: "Sofía Ramírez", username: "@sofir", body: "Aprendí colorimetría desde cero y hoy vivo de esto. Gracias CHARME.", img: "https://randomuser.me/api/portraits/women/68.jpg", country: "🇦🇷 Argentina" },
+  { name: "Mateo Rojas", username: "@mateor", body: "Las clases online son claras, con material que se puede ver una y otra vez.", img: "https://randomuser.me/api/portraits/men/51.jpg", country: "🇺🇾 Uruguay" },
+  { name: "María Duarte", username: "@mari", body: "Me encantó la forma de enseñar. Muy profesional y humano a la vez.", img: "https://randomuser.me/api/portraits/women/53.jpg", country: "🇵🇾 Paraguay" },
+  { name: "Nicolás Vera", username: "@nicov", body: "El master de colorimetría es lo mejor que hice en mi carrera.", img: "https://randomuser.me/api/portraits/men/33.jpg", country: "🇨🇱 Chile" },
+  { name: "Lucas Benítez", username: "@lucasb", body: "Muy práctico y aplicable desde el primer día. 100% recomendado.", img: "https://randomuser.me/api/portraits/men/22.jpg", country: "🇧🇴 Bolivia" },
+  { name: "Camila Torres", username: "@camit", body: "El área del alumno es cómoda y muy fácil de usar.", img: "https://randomuser.me/api/portraits/women/85.jpg", country: "🇵🇾 Paraguay" },
+  { name: "Emma López", username: "@emma", body: "Contenido de altísima calidad. Se nota la experiencia detrás.", img: "https://randomuser.me/api/portraits/women/45.jpg", country: "🇵🇪 Perú" },
+  { name: "Carlos Ríos", username: "@carlos", body: "Los tips de Mirta valen oro. Ya se ve el cambio en mi trabajo.", img: "https://randomuser.me/api/portraits/men/61.jpg", country: "🇪🇸 España" },
+];
+
+type Testimonial = (typeof testimonials)[number];
+
+function TestimonialCard({ img, name, username, body, country }: Testimonial) {
+  return (
+    <figure className="testimonial-card">
+      <div className="tc-head">
+        <img src={img} alt={name} className="tc-avatar" />
+        <figcaption>
+          <span className="tc-name">{name} <em>{country}</em></span>
+          <span className="tc-user">{username}</span>
+        </figcaption>
+      </div>
+      <blockquote>{body}</blockquote>
+    </figure>
+  );
+}
+
+function MarqueeColumn({ reverse = false }: { reverse?: boolean }) {
+  return (
+    <div className={`marquee-col ${reverse ? "reverse" : ""}`}>
+      <div className="marquee-track">
+        {[...testimonials, ...testimonials].map((t, i) => (
+          <TestimonialCard key={`${t.username}-${i}`} {...t} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const faqs = [
   ["¿Cómo accedo a los cursos?", "Después de inscribirte, ingresás al área del alumno con tu correo y contraseña para acceder a tus formaciones."],
   ["¿Los cursos tienen certificado?", "La disponibilidad y las condiciones del certificado se indican en la ficha de cada formación antes de inscribirte."],
@@ -64,6 +105,7 @@ export default function Home() {
         <nav className="desktop-nav" aria-label="Navegación principal">
           <a href="#formaciones">Formaciones</a>
           <a href="#academia">Academia</a>
+          <a href="/nosotros">Nosotros</a>
           <a href="#profesionales">Profesionales</a>
         </nav>
         <div className="header-actions">
@@ -81,6 +123,7 @@ export default function Home() {
         <nav>
           <a onClick={closeMenu} href="#formaciones">Formaciones</a>
           <a onClick={closeMenu} href="#academia">Academia</a>
+          <a onClick={closeMenu} href="/nosotros">Nosotros</a>
           <a onClick={closeMenu} href="#profesionales">Profesionales</a>
           <button onClick={() => { closeMenu(); openAuth("login"); }}>Iniciar sesión</button>
         </nav>
@@ -108,7 +151,7 @@ export default function Home() {
           <a className="text-link" href="#profesionales">Conocer la academia <span>→</span></a>
         </div>
         <div className="editorial-image reveal">
-          <Image src="/images/editorial.webp" alt="Proceso de coloración profesional" fill sizes="(max-width: 800px) 100vw, 56vw" />
+          <Image src="/uploads/barba.png" alt="Proceso de coloración profesional" fill sizes="(max-width: 800px) 100vw, 56vw" />
         </div>
       </section>
 
@@ -145,8 +188,6 @@ export default function Home() {
         </div>
       </section>
 
-      
-
       <section id="profesionales" className="professional section-shell">
         <div className="professional-title reveal">
           <p className="eyebrow">Profesionales CHARME</p>
@@ -157,7 +198,6 @@ export default function Home() {
           <p className="eyebrow">Master artist</p>
           <h3>Mirta Mena</h3>
           <p>Una propuesta de formación nacida del oficio, la práctica y la búsqueda constante de excelencia.</p>
-          <a className="text-link" href="#formaciones">Ver formaciones <span>→</span></a>
         </div>
       </section>
 
@@ -168,15 +208,6 @@ export default function Home() {
           <span className="short-line" />
           <p>Una experiencia online diseñada para acompañarte en cada paso. Accedé a tus cursos, seguí tu progreso y organizá tu aprendizaje con todo en un solo lugar.</p>
           <button className="text-link" onClick={() => openAuth("login")}>Conocer el área del alumno <span>→</span></button>
-        </div>
-      </section>
-
-      <section className="gallery section-shell">
-        <div className="section-heading reveal"><p className="eyebrow">El oficio en detalle</p><h2>Aprender también es observar.</h2></div>
-        <div className="gallery-grid">
-          <div className="gallery-tall reveal"><Image src="/images/gallery-1.webp" alt="Detalle de técnica de coloración" fill sizes="50vw" /></div>
-          <div className="gallery-small reveal"><Image src="/images/gallery-2.webp" alt="Cabello trabajado en salón" fill sizes="50vw" /></div>
-          <div className="gallery-small reveal"><Image src="/images/gallery-3.webp" alt="Herramientas profesionales CHARME" fill sizes="50vw" /></div>
         </div>
       </section>
 
@@ -194,11 +225,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="testimonials section-shell">
+        <div className="section-heading reveal">
+          <p className="eyebrow">Lo que dicen las alumnas</p>
+          <h2>Historias que hablan por sí solas.</h2>
+        </div>
+        <div className="testimonials-stage reveal">
+          <div className="testimonials-3d">
+            <MarqueeColumn />
+            <MarqueeColumn reverse />
+            <MarqueeColumn />
+            <MarqueeColumn reverse />
+          </div>
+          <div className="tw-fade tw-fade-top" />
+          <div className="tw-fade tw-fade-bottom" />
+          <div className="tw-fade tw-fade-left" />
+          <div className="tw-fade tw-fade-right" />
+        </div>
+      </section>
+
       <section className="final-cta">
         <Image src="/images/final-cta.webp" alt="Academia CHARME" fill sizes="100vw" />
         <div className="final-overlay" />
         <div className="reveal"><p className="eyebrow">Academia CHARME</p><h2>Tu próximo nivel<br />empieza acá.</h2><a className="button button-light" href="#formaciones">Explorar formaciones</a></div>
       </section>
+
+
+
 
       <footer>
         <div className="footer-grid section-shell">

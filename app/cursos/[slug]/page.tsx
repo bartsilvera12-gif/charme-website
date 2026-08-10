@@ -21,9 +21,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
   if (!course) notFound();
 
   const related = getRelatedCourses(params.slug);
-  const waLink = `https://wa.me/595986373130?text=${encodeURIComponent(
-    `Hola, quiero inscribirme en ${course.name} (${course.price}).`,
-  )}`;
+  const pagoparUrl = course.pagoparUrl ?? "#";
 
   return (
     <main className="course-page">
@@ -65,7 +63,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
             <strong>{course.price}</strong>
           </div>
           <div className="ch-actions">
-            <a className="button button-dark" href={waLink} target="_blank" rel="noreferrer">Inscribirme por WhatsApp</a>
+            <a className="button button-dark" href={pagoparUrl} target="_blank" rel="noreferrer">Inscribirme y pagar</a>
             <Link className="button button-ghost" href="/#formaciones">Ver todos los cursos</Link>
           </div>
         </div>
@@ -149,7 +147,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
           <p className="eyebrow">¿Empezamos?</p>
           <h2>Reservá tu cupo hoy.</h2>
           <p>Escribinos por WhatsApp y te contamos cómo se paga, cuándo arranca el próximo grupo y todo lo que necesitás saber.</p>
-          <a className="button button-light" href={waLink} target="_blank" rel="noreferrer">Inscribirme por WhatsApp</a>
+          <a className="button button-light" href={pagoparUrl} target="_blank" rel="noreferrer">Inscribirme y pagar</a>
         </div>
       </section>
 

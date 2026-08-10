@@ -13,6 +13,7 @@ export type Course = {
   learn: string[];
   modules: { title: string; detail: string }[];
   requirements: string[];
+  pagoparUrl?: string;
 };
 
 const baseLearn = {

@@ -1,26 +1,14 @@
 "use client";
 
 import NextImage from "next/image";
+import Link from "next/link";
 import type { ComponentProps } from "react";
 import { useEffect, useState } from "react";
+import { courses } from "./cursos/data";
 
 function Image(props: ComponentProps<typeof NextImage>) {
   return <NextImage {...props} unoptimized />;
 }
-
-const courses = [
-  { name: "Colorimetría inicial", price: "Gs. 250.000", image: "/images/colorimetria-inicial.webp" },
-  { name: "Colorimetría técnico 1", price: "Gs. 300.000", image: "/images/colorimetria-tecnico-1.webp" },
-  { name: "Colorimetría técnico 2", price: "Gs. 350.000", image: "/images/colorimetria-tecnico-2.webp" },
-  { name: "Técnico superior", price: "Gs. 400.000", image: "/images/tecnico-superior.webp" },
-  { name: "Master en colorimetría", price: "Gs. 500.000", image: "/images/master-colorimetria.webp" },
-  { name: "Barbería inicial", price: "Gs. 250.000", image: "/images/barberia-inicial.webp" },
-  { name: "Barbería intermedia", price: "Gs. 300.000", image: "/images/barberia-intermedia.webp" },
-  { name: "Barbería avanzado", price: "Gs. 350.000", image: "/images/barberia-avanzado.webp" },
-  { name: "Maquillaje inicial", price: "Gs. 250.000", image: "/images/maquillaje-inicial.webp" },
-  { name: "Maquillaje intermedio", price: "Gs. 300.000", image: "/images/maquillaje-intermedio.webp" },
-  { name: "Maquillaje avanzado", price: "Gs. 350.000", image: "/images/maquillaje-avanzado.webp" },
-];
 
 const testimonials = [
   { name: "Ana Giménez", username: "@ana.g", body: "Los cursos me cambiaron la forma de trabajar. Práctica pura y bien explicada.", img: "https://randomuser.me/api/portraits/women/32.jpg", country: "🇵🇾 Paraguay" },
@@ -163,15 +151,15 @@ export default function Home() {
         </div>
         <div className="course-grid">
           {courses.slice(0, showAll ? courses.length : 4).map((course) => (
-            <article className="course-card reveal" key={course.name}>
+            <Link className="course-card reveal" key={course.slug} href={`/cursos/${course.slug}`}>
               <div className="course-image">
                 <Image src={course.image} alt={course.name} fill sizes="(max-width: 640px) 82vw, (max-width: 1000px) 42vw, 22vw" />
               </div>
               <div className="course-meta">
                 <div><h3>{course.name}</h3><p>{course.price}</p></div>
-                <button aria-label={`Ver ${course.name}`} onClick={() => openAuth("login")}>→</button>
+                <span aria-hidden="true" className="cc-arrow">→</span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
         {!showAll && <button className="button button-outline view-all" onClick={() => setShowAll(true)}>Ver todas las formaciones</button>}

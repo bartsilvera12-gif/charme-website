@@ -66,18 +66,6 @@
   min-width: 0;
 }
 
-.professional-index {
-  position: absolute;
-  z-index: -1;
-  top: -145px;
-  right: -50px;
-  color: var(--champagne);
-  font: 300 clamp(240px, 25vw, 430px) / 0.8 var(--serif);
-  letter-spacing: -0.08em;
-  opacity: 0.11;
-  pointer-events: none;
-  user-select: none;
-}
 
 .professional-copy > .eyebrow {
   margin: 0 0 28px;

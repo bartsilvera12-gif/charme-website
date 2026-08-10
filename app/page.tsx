@@ -219,19 +219,22 @@ export default function Home() {
       <section className="testimonials section-shell">
         <div className="section-heading reveal">
           <p className="eyebrow">Lo que dicen las alumnas</p>
-          <h2>Historias que hablan por sí solas.</h2>
+          <h2>Historias que hablan<br />por sí solas.</h2>
         </div>
-        <div className="testimonials-stage reveal">
-          <div className="testimonials-3d">
-            <MarqueeColumn />
-            <MarqueeColumn reverse />
-            <MarqueeColumn />
-            <MarqueeColumn reverse />
-          </div>
-          <div className="tw-fade tw-fade-top" />
-          <div className="tw-fade tw-fade-bottom" />
-          <div className="tw-fade tw-fade-left" />
-          <div className="tw-fade tw-fade-right" />
+        <div className="testimonials-grid">
+          {testimonials.slice(0, 6).map((t) => (
+            <figure key={t.username} className="testimonial-pull reveal">
+              <span className="tp-quote" aria-hidden="true">“</span>
+              <blockquote>{t.body}</blockquote>
+              <figcaption>
+                <img src={t.img} alt={t.name} className="tp-avatar" />
+                <div>
+                  <span className="tp-name">{t.name}</span>
+                  <span className="tp-meta">{t.country} · Alumna CHARME</span>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 

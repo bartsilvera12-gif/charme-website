@@ -189,13 +189,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="online section-shell">
+      <section className="online">
         <div className="online-copy reveal">
           <p className="eyebrow">Experiencia online</p>
           <h2>Tu formación continúa donde estés.</h2>
           <span className="short-line" />
           <p>Una experiencia online diseñada para acompañarte en cada paso. Accedé a tus cursos, seguí tu progreso y organizá tu aprendizaje con todo en un solo lugar.</p>
           <button className="text-link" onClick={() => openAuth("login")}>Conocer el área del alumno <span>→</span></button>
+        </div>
+        <div className="online-image">
+          <Image src="/images/experiencia-online.png" alt="Área del alumno de Academia CHARME" fill sizes="(max-width: 900px) 100vw, 55vw" />
         </div>
       </section>
 

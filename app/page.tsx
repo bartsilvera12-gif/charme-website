@@ -191,9 +191,7 @@ export default function Home() {
   </div>
 
   <div className="professional-copy reveal">
-    <span className="professional-index" aria-hidden="true">
-      01
-    </span>
+
 
     <p className="eyebrow">Profesionales CHARME</p>
 

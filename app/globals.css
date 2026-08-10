@@ -262,3 +262,18 @@
     padding: 22px;
   }
 }
+
+/* Alinear el texto con la parte superior de la imagen */
+.nosotros-hero {
+  align-items: start !important;
+}
+
+.nosotros-hero-copy {
+  align-self: start !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.nosotros-hero-copy > .eyebrow {
+  margin-top: 0 !important;
+}

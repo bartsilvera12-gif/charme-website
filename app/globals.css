@@ -185,19 +185,80 @@
 .faq details{opacity:0;transform:translateY(14px);animation:hero-rise .7s cubic-bezier(.22,.61,.36,1) forwards}.faq details:nth-of-type(1){animation-delay:.05s}.faq details:nth-of-type(2){animation-delay:.15s}.faq details:nth-of-type(3){animation-delay:.25s}.faq details:nth-of-type(4){animation-delay:.35s}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1;transform:none;transition:none}.course-image img,.gallery-grid img{transition:none}.hero-copy>*,.hero-image{opacity:1;transform:none;animation:none}}
 /* Ajuste de portada Nosotros */
-.nosotros,
+/* Portada de Nosotros */
 .nosotros-hero {
+  background: #141210;
+  color: #f3eee6;
+}
+
+.nosotros-hero h1,
+.nosotros-hero .lead {
+  color: #f3eee6;
+}
+
+.nosotros-hero .short-line {
   background: #f3eee6;
 }
 
-.nosotros-hero {
-  align-items: start;
+/* Subtítulo visible sobre fondo negro */
+.nosotros-hero .eyebrow {
+  background: #f3eee6 !important;
+  color: #141210 !important;
+}
+/* Quitar espacio entre ubicación y contacto */
+.nosotros-map {
+  padding-bottom: 30px;
 }
 
-.nosotros-hero-copy {
-  padding-top: 0;
+.nosotros-contact {
+  padding-top: 50px;
 }
 
-.nosotros-hero-copy .eyebrow {
-  margin-top: 0;
+/* Datos de ubicación con efecto de tarjetas */
+.map-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 34px;
+  border-top: 0;
+}
+
+.map-details li {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 30px;
+  border: 1px solid rgba(24, 22, 19, 0.05);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow:
+    0 6px 20px rgba(24, 22, 19, 0.06),
+    0 1px 3px rgba(24, 22, 19, 0.04);
+  transition:
+    transform 0.35s cubic-bezier(.22, .61, .36, 1),
+    box-shadow 0.35s,
+    border-color 0.3s;
+}
+
+.map-details li:hover {
+  transform: translateY(-3px);
+  border-color: rgba(161, 138, 104, 0.35);
+  box-shadow:
+    0 14px 36px rgba(24, 22, 19, 0.11),
+    0 2px 6px rgba(24, 22, 19, 0.06);
+}
+
+.map-details li:first-child,
+.map-details li:last-child {
+  border-top: 1px solid rgba(24, 22, 19, 0.05);
+  border-bottom: 1px solid rgba(24, 22, 19, 0.05);
+}
+
+@media (max-width: 760px) {
+  .map-details li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 22px;
+  }
 }

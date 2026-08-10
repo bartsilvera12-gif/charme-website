@@ -145,15 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="online section-shell">
-        <div className="online-copy reveal">
-          <p className="eyebrow">Experiencia online</p>
-          <h2>Tu formación continúa donde estés.</h2>
-          <span className="short-line" />
-          <p>Una experiencia online diseñada para acompañarte en cada paso. Accedé a tus cursos, seguí tu progreso y organizá tu aprendizaje con todo en un solo lugar.</p>
-          <button className="text-link" onClick={() => openAuth("login")}>Conocer el área del alumno <span>→</span></button>
-        </div>
-      </section>
+      
 
       <section id="profesionales" className="professional section-shell">
         <div className="professional-title reveal">
@@ -166,6 +158,16 @@ export default function Home() {
           <h3>Mirta Mena</h3>
           <p>Una propuesta de formación nacida del oficio, la práctica y la búsqueda constante de excelencia.</p>
           <a className="text-link" href="#formaciones">Ver formaciones <span>→</span></a>
+        </div>
+      </section>
+
+      <section className="online section-shell">
+        <div className="online-copy reveal">
+          <p className="eyebrow">Experiencia online</p>
+          <h2>Tu formación continúa donde estés.</h2>
+          <span className="short-line" />
+          <p>Una experiencia online diseñada para acompañarte en cada paso. Accedé a tus cursos, seguí tu progreso y organizá tu aprendizaje con todo en un solo lugar.</p>
+          <button className="text-link" onClick={() => openAuth("login")}>Conocer el área del alumno <span>→</span></button>
         </div>
       </section>
 

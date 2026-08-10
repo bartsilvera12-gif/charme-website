@@ -151,7 +151,7 @@ export default function Home() {
           <a className="text-link" href="#profesionales">Conocer la academia <span>→</span></a>
         </div>
         <div className="editorial-image reveal">
-          <Image src="/uploads/barba.png" alt="Proceso de coloración profesional" fill sizes="(max-width: 800px) 100vw, 56vw" />
+          <Image src="/images/barba.png" alt="Proceso de coloración profesional" fill sizes="(max-width: 800px) 100vw, 56vw" />
         </div>
       </section>
 

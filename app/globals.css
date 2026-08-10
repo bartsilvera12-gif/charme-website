@@ -184,3 +184,20 @@
 .section-heading.reveal{transform:translateY(20px)}.section-heading.reveal.is-visible{transform:none}
 .faq details{opacity:0;transform:translateY(14px);animation:hero-rise .7s cubic-bezier(.22,.61,.36,1) forwards}.faq details:nth-of-type(1){animation-delay:.05s}.faq details:nth-of-type(2){animation-delay:.15s}.faq details:nth-of-type(3){animation-delay:.25s}.faq details:nth-of-type(4){animation-delay:.35s}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1;transform:none;transition:none}.course-image img,.gallery-grid img{transition:none}.hero-copy>*,.hero-image{opacity:1;transform:none;animation:none}}
+/* Ajuste de portada Nosotros */
+.nosotros,
+.nosotros-hero {
+  background: #f3eee6;
+}
+
+.nosotros-hero {
+  align-items: start;
+}
+
+.nosotros-hero-copy {
+  padding-top: 0;
+}
+
+.nosotros-hero-copy .eyebrow {
+  margin-top: 0;
+}

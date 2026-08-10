@@ -90,6 +90,42 @@ export default function NosotrosPage() {
         </blockquote>
       </section>
 
+      <section className="nosotros-map section-shell">
+        <div className="map-copy">
+          <p className="eyebrow">Ubicación</p>
+          <h2>Visitanos en San Lorenzo.</h2>
+          <span className="short-line" />
+          <p>
+            Nuestra sede está sobre Avda. Gaspar Rodríguez de Francia c/ Defensores del Chaco.
+            Fácil acceso desde el centro de Asunción y todo el área metropolitana.
+          </p>
+          <ul className="map-details">
+            <li>
+              <span className="md-label">Dirección</span>
+              <span>Avda. Gaspar Rodríguez de Francia c/ Defensores del Chaco — San Lorenzo</span>
+            </li>
+            <li>
+              <span className="md-label">Horario</span>
+              <span>Lunes a viernes, 08:00 a 18:00 hs</span>
+            </li>
+            <li>
+              <span className="md-label">Teléfono</span>
+              <span><a href="https://wa.me/595986373130" target="_blank" rel="noreferrer">+595 (986) 373 130</a></span>
+            </li>
+          </ul>
+          <a className="button button-dark map-cta" href="https://www.google.com.py/maps/place/CHARME+SAN+LORENZO/@-25.3417691,-57.5077899,17z" target="_blank" rel="noreferrer">Cómo llegar →</a>
+        </div>
+        <div className="map-embed">
+          <iframe
+            title="Ubicación de Academia CHARME en San Lorenzo"
+            src="https://www.google.com/maps?q=CHARME+SAN+LORENZO,-25.3417691,-57.5077899&z=16&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
+      </section>
+
       <section className="nosotros-contact section-shell">
         <div className="contact-intro">
           <p className="eyebrow">Contacto</p>

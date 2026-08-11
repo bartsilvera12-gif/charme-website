@@ -118,7 +118,6 @@ export default function Home() {
       </div>
 
       <section id="inicio" className="hero">
-        <span className="hero-divider" aria-hidden="true"><span className="hd-dot" /></span>
         <div className="hero-badge" aria-hidden="true">
           <span>Est. Paraguay</span>
           <span className="hb-dot">·</span>

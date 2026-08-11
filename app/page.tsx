@@ -118,6 +118,12 @@ export default function Home() {
       </div>
 
       <section id="inicio" className="hero">
+        <span className="hero-watermark" aria-hidden="true">Charme</span>
+        <div className="hero-badge" aria-hidden="true">
+          <span>Est. Paraguay</span>
+          <span className="hb-dot">·</span>
+          <span>+30 años de excelencia</span>
+        </div>
         <div className="hero-copy">
           <p className="eyebrow">Academia digital CHARME</p>
           <h1>Aprendé de quienes viven la belleza.</h1>
@@ -125,6 +131,10 @@ export default function Home() {
           <p>Formación profesional,<br />ahora desde cualquier lugar.</p>
           <a className="button button-dark" href="#formaciones">Explorar formaciones</a>
         </div>
+        <a className="hero-scroll" href="#academia" aria-label="Descubrí más">
+          <span>Descubrí</span>
+          <span className="hs-line" />
+        </a>
         <div className="hero-image">
           <Image className="hero-slide" src="/images/hero.avif" alt="Trabajo profesional de coloración en Academia CHARME" fill priority sizes="(max-width: 800px) 100vw, 50vw" />
           <Image className="hero-slide" src="/images/editorial.webp" alt="Detalle editorial Academia CHARME" fill sizes="(max-width: 800px) 100vw, 50vw" />

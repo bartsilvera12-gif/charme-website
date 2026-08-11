@@ -126,7 +126,9 @@ export default function Home() {
           <a className="button button-dark" href="#formaciones">Explorar formaciones</a>
         </div>
         <div className="hero-image">
-          <Image src="/images/hero.avif" alt="Trabajo profesional de coloración en Academia CHARME" fill priority sizes="(max-width: 800px) 100vw, 58vw" />
+          <Image className="hero-slide" src="/images/hero.avif" alt="Trabajo profesional de coloración en Academia CHARME" fill priority sizes="(max-width: 800px) 100vw, 50vw" />
+          <Image className="hero-slide" src="/images/masterclass.webp" alt="Masterclass en Academia CHARME" fill sizes="(max-width: 800px) 100vw, 50vw" />
+          <Image className="hero-slide" src="/images/editorial.webp" alt="Detalle editorial Academia CHARME" fill sizes="(max-width: 800px) 100vw, 50vw" />
         </div>
       </section>
 

@@ -125,7 +125,7 @@ export default function Home() {
         </div>
         <div className="hero-copy">
           <p className="eyebrow">Academia digital CHARME</p>
-          <h1>Aprendé de quienes viven la belleza.</h1>
+          <h1>Aprendé de quienes<br />viven la belleza.</h1>
           <span className="short-line" />
           <p>Formación profesional,<br />ahora desde cualquier lugar.</p>
           <a className="button button-dark" href="#formaciones">Explorar formaciones</a>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 import { useEffect, useState } from "react";
 import { courses } from "./cursos/data";
+import { galleryItems } from "./galeria/data";
 
 function Image(props: ComponentProps<typeof NextImage>) {
   return <NextImage {...props} unoptimized />;
@@ -58,6 +59,9 @@ const faqs = [
   ["¿Por cuánto tiempo tengo acceso?", "El tiempo de acceso puede variar según la formación. Vas a encontrar ese dato dentro del detalle de cada curso."],
 ];
 
+// Cantidad visible en la home (2 filas de 4 = 8). El resto se ve en /galeria.
+const GALLERY_PREVIEW_COUNT = 8;
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showAll, setShowAll] = useState(false);
@@ -95,6 +99,7 @@ export default function Home() {
           <a href="#academia">Academia</a>
           <a href="/nosotros">Nosotros</a>
           <a href="#profesionales">Profesionales</a>
+          <a href="/galeria">Galería</a>
         </nav>
         <div className="header-actions">
           <button className="login-link" onClick={() => openAuth("login")}>Iniciar sesión</button>
@@ -113,6 +118,7 @@ export default function Home() {
           <a onClick={closeMenu} href="#academia">Academia</a>
           <a onClick={closeMenu} href="/nosotros">Nosotros</a>
           <a onClick={closeMenu} href="#profesionales">Profesionales</a>
+          <a onClick={closeMenu} href="/galeria">Galería</a>
           <button onClick={() => { closeMenu(); openAuth("login"); }}>Iniciar sesión</button>
         </nav>
       </div>
@@ -149,7 +155,7 @@ export default function Home() {
           <a className="text-link" href="#profesionales">Conocer la academia <span>→</span></a>
         </div>
         <div className="editorial-image reveal">
-          <Image src="/images/barba.png" alt="Proceso de coloración profesional" fill sizes="(max-width: 800px) 100vw, 56vw" />
+          <Image src="/images/galeria/galeria-26.webp" alt="Mirta Mena aplicando spray de fijación en una clase de Academia CHARME" fill sizes="(max-width: 800px) 100vw, 56vw" style={{ objectPosition: "35% center" }} />
         </div>
       </section>
 
@@ -233,6 +239,30 @@ export default function Home() {
     </div>
   </div>
 </section>
+
+      <section id="galeria" className="gallery-section section-shell">
+        <div className="section-heading reveal">
+          <p className="eyebrow">Galería CHARME</p>
+          <h2>Nuestro trabajo<br />en imágenes.</h2>
+          <p>Una muestra de trabajos, clases y momentos de la academia.</p>
+        </div>
+        <div className="gallery-grid">
+          {galleryItems.slice(0, GALLERY_PREVIEW_COUNT).map((item, i) => (
+            <figure key={`${item.src}-${i}`} className="gallery-item reveal">
+              {item.type === "video" ? (
+                <video src={item.src} autoPlay muted loop playsInline preload="metadata" />
+              ) : (
+                <Image src={item.src} alt={item.alt} fill sizes="(max-width: 767px) 50vw, (max-width: 1050px) 33vw, 25vw" />
+              )}
+            </figure>
+          ))}
+        </div>
+        {galleryItems.length > GALLERY_PREVIEW_COUNT && (
+          <div className="gallery-more reveal">
+            <Link className="button button-dark" href="/galeria">Ver todo</Link>
+          </div>
+        )}
+      </section>
 
       <section className="online">
         <div className="online-copy reveal">

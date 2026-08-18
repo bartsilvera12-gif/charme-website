@@ -19,6 +19,7 @@ export default function PoliticaPrivacidadPage() {
           <Link href="/#academia">Academia</Link>
           <Link href="/nosotros">Nosotros</Link>
           <Link href="/#profesionales">Profesionales</Link>
+          <Link href="/galeria">Galería</Link>
         </nav>
         <div className="header-actions">
           <Link className="button button-dark" href="/">Volver al inicio</Link>

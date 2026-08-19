@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { slugify } from "@/lib/utils/slug";
+import BackButton from "@/components/admin/BackButton";
 
 type Category = {
   id: string;
@@ -71,7 +72,7 @@ export default function CategoriasPage() {
   return (
     <>
       <header className="adm-topbar">
-        <h1>Categorías</h1>
+        <div className="adm-topbar-left"><BackButton /><h1>Categorías</h1></div>
         <button className="adm-btn adm-btn-primary" onClick={() => setEditing({ name: "", is_active: true })}>+ Nueva categoría</button>
       </header>
       <div className="adm-content">

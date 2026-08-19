@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
 import ImageUpload from "@/components/admin/ImageUpload";
+import BackButton from "@/components/admin/BackButton";
 
 type About = Record<string, string | null>;
 type Contact = Record<string, string | null>;
@@ -54,12 +55,12 @@ export default function NosotrosAdminPage() {
   const A = (k: string, v: string) => { setAbout((p) => ({ ...p, [k]: v })); setOk(false); };
   const C = (k: string, v: string) => { setContact((p) => ({ ...p, [k]: v })); setOk(false); };
 
-  if (loading) return <><header className="adm-topbar"><h1>Nosotros</h1></header><div className="adm-content"><div className="adm-empty">Cargando…</div></div></>;
+  if (loading) return <><header className="adm-topbar"><div className="adm-topbar-left"><BackButton /><h1>Nosotros</h1></div></header><div className="adm-content"><div className="adm-empty">Cargando…</div></div></>;
 
   return (
     <>
       <header className="adm-topbar">
-        <h1>Nosotros</h1>
+        <div className="adm-topbar-left"><BackButton /><h1>Nosotros</h1></div>
         <button className="adm-btn adm-btn-primary" onClick={save} disabled={saving}>{saving ? "Guardando…" : "Guardar todo"}</button>
       </header>
       <div className="adm-content">

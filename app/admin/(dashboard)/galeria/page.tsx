@@ -5,6 +5,7 @@ import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 import { safeFileName } from "@/lib/utils/slug";
 import { compressToWebp } from "@/lib/utils/image";
+import BackButton from "@/components/admin/BackButton";
 
 const BUCKET = "charme-media";
 const IMG = ["image/jpeg", "image/png", "image/webp", "image/avif"];
@@ -112,7 +113,7 @@ export default function GaleriaAdminPage() {
   return (
     <>
       <header className="adm-topbar">
-        <h1>Galería</h1>
+        <div className="adm-topbar-left"><BackButton /><h1>Galería</h1></div>
         <label className="adm-btn adm-btn-primary" style={{ cursor: "pointer" }}>
           {uploading ? `Subiendo ${uploading}…` : "+ Subir imágenes / videos"}
           <input type="file" multiple hidden accept={[...IMG, ...VID].join(",")} onChange={onFiles} disabled={!!uploading} />

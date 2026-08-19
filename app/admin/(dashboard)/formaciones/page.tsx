@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
+import BackButton from "@/components/admin/BackButton";
 
 type Row = {
   id: string; slug: string; name: string; price: string | null;
@@ -58,7 +59,7 @@ export default function FormacionesListPage() {
   return (
     <>
       <header className="adm-topbar">
-        <h1>Formaciones</h1>
+        <div className="adm-topbar-left"><BackButton /><h1>Formaciones</h1></div>
         <Link href="/admin/formaciones/nueva" className="adm-btn adm-btn-primary">+ Nueva formación</Link>
       </header>
       <div className="adm-content">

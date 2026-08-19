@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
+import BackButton from "@/components/admin/BackButton";
 
 type S = Record<string, string | null> & { id?: string };
 
@@ -50,7 +51,7 @@ export default function ConfiguracionPage() {
   return (
     <>
       <header className="adm-topbar">
-        <h1>Configuración general</h1>
+        <div className="adm-topbar-left"><BackButton /><h1>Configuración general</h1></div>
         <button className="adm-btn adm-btn-primary" onClick={save} disabled={saving}>{saving ? "Guardando…" : "Guardar cambios"}</button>
       </header>
       <div className="adm-content">

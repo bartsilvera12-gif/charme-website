@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
 import ImageUpload from "@/components/admin/ImageUpload";
+import BackButton from "@/components/admin/BackButton";
 
 type P = {
   id: string; name: string; role_title: string | null; eyebrow: string | null;
@@ -54,7 +55,7 @@ export default function ProfesionalesPage() {
   return (
     <>
       <header className="adm-topbar">
-        <h1>Profesionales</h1>
+        <div className="adm-topbar-left"><BackButton /><h1>Profesionales</h1></div>
         <button className="adm-btn adm-btn-primary" onClick={() => setEditing({ is_active: true, is_featured: false })}>+ Nuevo profesional</button>
       </header>
       <div className="adm-content">

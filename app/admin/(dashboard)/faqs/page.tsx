@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
+import BackButton from "@/components/admin/BackButton";
 
 type F = { id: string; question: string; answer: string; is_active: boolean; sort_order: number };
 
@@ -55,7 +56,7 @@ export default function FaqsPage() {
   return (
     <>
       <header className="adm-topbar">
-        <h1>Preguntas frecuentes</h1>
+        <div className="adm-topbar-left"><BackButton /><h1>Preguntas frecuentes</h1></div>
         <button className="adm-btn adm-btn-primary" onClick={() => setEditing({ is_active: true })}>+ Nueva pregunta</button>
       </header>
       <div className="adm-content">

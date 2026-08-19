@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
 import ImageUpload from "@/components/admin/ImageUpload";
+import BackButton from "@/components/admin/BackButton";
 
 type Section = {
   section: string; eyebrow: string | null; title: string | null; subtitle: string | null;
@@ -52,11 +53,11 @@ export default function InicioPage() {
     setOkKey(s.section);
   }
 
-  if (loading) return <><header className="adm-topbar"><h1>Inicio</h1></header><div className="adm-content"><div className="adm-empty">Cargando…</div></div></>;
+  if (loading) return <><header className="adm-topbar"><div className="adm-topbar-left"><BackButton /><h1>Inicio</h1></div></header><div className="adm-content"><div className="adm-empty">Cargando…</div></div></>;
 
   return (
     <>
-      <header className="adm-topbar"><h1>Inicio</h1></header>
+      <header className="adm-topbar"><div className="adm-topbar-left"><BackButton /><h1>Inicio</h1></div></header>
       <div className="adm-content">
         {error && <div className="adm-alert adm-alert-error">{error}</div>}
         {sections.map((s, i) => (

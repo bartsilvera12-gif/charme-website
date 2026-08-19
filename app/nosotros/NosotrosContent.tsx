@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import NextImage from "next/image";
 import { getAboutContent, getContactSettings, type AboutView, type ContactView } from "@/lib/data/site";
+import PublicHeader from "@/components/public/PublicHeader";
 
 export default function NosotrosContent() {
   const [about, setAbout] = useState<AboutView | null>(null);
@@ -38,21 +39,7 @@ export default function NosotrosContent() {
 
   return (
     <main className="nosotros">
-      <header className="site-header nosotros-header">
-        <Link href="/" className="brand" aria-label="Academia CHARME">
-          <NextImage src="/images/logo.png" alt="Academia CHARME" width={200} height={110} unoptimized />
-        </Link>
-        <nav className="desktop-nav">
-          <Link href="/#formaciones">Formaciones</Link>
-          <Link href="/#academia">Academia</Link>
-          <Link href="/nosotros" className="active">Nosotros</Link>
-          <Link href="/#profesionales">Profesionales</Link>
-          <Link href="/galeria">Galería</Link>
-        </nav>
-        <div className="header-actions">
-          <Link className="button button-dark" href="/">Volver al inicio</Link>
-        </div>
-      </header>
+      <PublicHeader active="nosotros" />
 
       <section className="nosotros-hero section-shell">
         <div className="nosotros-hero-copy">

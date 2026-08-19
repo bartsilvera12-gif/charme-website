@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import NextImage from "next/image";
 import { getGalleryItems, type GalleryView } from "@/lib/data/site";
+import PublicHeader from "@/components/public/PublicHeader";
 
 export default function GaleriaContent() {
   const [galleryItems, setGalleryItems] = useState<GalleryView[]>([]);
@@ -16,21 +17,7 @@ export default function GaleriaContent() {
 
   return (
     <main className="galeria-page">
-      <header className="site-header nosotros-header">
-        <Link href="/" className="brand" aria-label="Academia CHARME">
-          <NextImage src="/images/logo.png" alt="Academia CHARME" width={200} height={110} unoptimized />
-        </Link>
-        <nav className="desktop-nav">
-          <Link href="/#formaciones">Formaciones</Link>
-          <Link href="/#academia">Academia</Link>
-          <Link href="/nosotros">Nosotros</Link>
-          <Link href="/#profesionales">Profesionales</Link>
-          <Link href="/galeria" className="active">Galería</Link>
-        </nav>
-        <div className="header-actions">
-          <Link className="button button-dark" href="/">Volver al inicio</Link>
-        </div>
-      </header>
+      <PublicHeader active="galeria" />
 
       <section className="galeria-hero section-shell">
         <p className="eyebrow">Galería CHARME</p>

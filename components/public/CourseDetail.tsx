@@ -4,24 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import NextImage from "next/image";
 import { getCourseBySlug, getRelatedCourses, type CourseDetail as Course, type CourseListItem } from "@/lib/data/courses";
+import PublicHeader from "@/components/public/PublicHeader";
 
 function Chrome({ children }: { children: React.ReactNode }) {
   return (
     <main className="course-page">
-      <header className="site-header nosotros-header">
-        <Link href="/" className="brand" aria-label="Academia CHARME">
-          <NextImage src="/images/logo.png" alt="Academia CHARME" width={200} height={110} unoptimized />
-        </Link>
-        <nav className="desktop-nav">
-          <Link href="/#formaciones">Formaciones</Link>
-          <Link href="/#academia">Academia</Link>
-          <Link href="/nosotros">Nosotros</Link>
-          <Link href="/#profesionales">Profesionales</Link>
-        </nav>
-        <div className="header-actions">
-          <Link className="button button-dark" href="/">Volver</Link>
-        </div>
-      </header>
+      <PublicHeader />
       {children}
       <footer>
         <div className="footer-grid section-shell">

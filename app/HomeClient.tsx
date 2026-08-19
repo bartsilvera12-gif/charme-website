@@ -101,7 +101,9 @@ export default function Home() {
         <div className="header-actions">
           <button className="login-link" onClick={() => openAuth("login")}>Iniciar sesión</button>
           <a className="button button-dark" href="#formaciones">Explorar cursos</a>
-          <button className="menu-button" onClick={() => setMenuOpen(true)} aria-label="Abrir menú">Menú</button>
+          <button className="menu-button" onClick={() => setMenuOpen(true)} aria-label="Abrir menú">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          </button>
         </div>
       </header>
 

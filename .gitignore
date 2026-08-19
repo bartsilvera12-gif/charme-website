@@ -5,3 +5,6 @@ out/
 .env
 .env.*
 !.env.example
+# build artifacts
+*.zip
+next-env.d.ts

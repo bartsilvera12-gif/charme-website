@@ -90,6 +90,17 @@ export default function StudentAuthModal({
     setOk(null);
   }
 
+  async function forgot() {
+    if (!email.trim()) { setError("Escribí tu email arriba y volvé a tocar 'Recuperar'."); return; }
+    setLoading(true); setError(null); setOk(null);
+    const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+      redirectTo: `${window.location.origin}/reset`,
+    });
+    setLoading(false);
+    if (error) { setError(error.message); return; }
+    setOk("Te enviamos un correo para restablecer tu contraseña. Revisá tu bandeja (y spam).");
+  }
+
   if (!open) return null;
 
   return (
@@ -156,6 +167,15 @@ export default function StudentAuthModal({
                 {loading ? "Procesando…" : mode === "login" ? "Iniciar sesión" : "Crear mi cuenta"}
               </button>
             </form>
+
+            {mode === "login" && (
+              <div style={{ textAlign: "center", marginTop: 14 }}>
+                <button type="button" onClick={forgot} disabled={loading}
+                  style={{ border: 0, background: "none", color: "var(--muted)", fontSize: 13, cursor: "pointer", textDecoration: "underline" }}>
+                  ¿Olvidaste tu contraseña? Recuperar
+                </button>
+              </div>
+            )}
 
             <div className="auth-switch">
               <span>{mode === "login" ? "¿Todavía no tenés cuenta?" : "¿Ya tenés una cuenta?"}</span>

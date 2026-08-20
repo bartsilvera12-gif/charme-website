@@ -8,6 +8,7 @@ import type { CourseListItem } from "@/lib/data/courses";
 import { getActiveCourses } from "@/lib/data/courses";
 import type { GalleryView, TestimonialView, FaqView, HomeSection, ProfessionalView } from "@/lib/data/site";
 import { getTestimonials, getFaqs, getGalleryItems, getGalleryCount, getHomeContent, getFeaturedProfessional } from "@/lib/data/site";
+import StudentAuthModal from "@/components/public/StudentAuthModal";
 
 function Image(props: ComponentProps<typeof NextImage>) {
   return <NextImage {...props} unoptimized />;
@@ -335,30 +336,7 @@ export default function Home() {
         </div>
       </footer>
 
-      {loginOpen && (
-        <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label={authMode === "login" ? "Iniciar sesión" : "Crear cuenta"} onMouseDown={(e) => e.target === e.currentTarget && closeAuth()}>
-          <div className="login-modal">
-            <button className="modal-close" onClick={closeAuth} aria-label="Cerrar">×</button>
-            <Image src="/images/logo.png" alt="Academia CHARME" width={240} height={130} />
-            <p className="eyebrow">{authMode === "login" ? "Área del alumno" : "Nueva alumna/o"}</p>
-            <h2>{authMode === "login" ? "Continuá aprendiendo." : "Empezá tu formación."}</h2>
-            <form onSubmit={(e) => e.preventDefault()}>
-              {authMode === "register" && <label>Nombre completo<input type="text" placeholder="Tu nombre y apellido" autoComplete="name" required /></label>}
-              <label>Email<input type="email" placeholder="tu@email.com" autoComplete="email" required /></label>
-              <label>Contraseña<input type="password" placeholder="••••••••" autoComplete={authMode === "login" ? "current-password" : "new-password"} minLength={8} required /></label>
-              {authMode === "register" && <label>Confirmar contraseña<input type="password" placeholder="••••••••" autoComplete="new-password" minLength={8} required /></label>}
-              <button className="button button-dark" type="submit">{authMode === "login" ? "Iniciar sesión" : "Crear mi cuenta"}</button>
-            </form>
-            <div className="auth-switch">
-              <span>{authMode === "login" ? "¿Todavía no tenés cuenta?" : "¿Ya tenés una cuenta?"}</span>
-              <button type="button" onClick={() => setAuthMode(authMode === "login" ? "register" : "login")}>
-                {authMode === "login" ? "Crear cuenta" : "Iniciar sesión"}
-              </button>
-            </div>
-            <small>Vista demostrativa. La autenticación debe conectarse con Supabase Auth para habilitar el acceso real.</small>
-          </div>
-        </div>
-      )}
+      <StudentAuthModal open={loginOpen} onClose={closeAuth} initialMode={authMode} />
     </main>
   );
 }

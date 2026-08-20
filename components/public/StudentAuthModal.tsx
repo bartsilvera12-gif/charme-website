@@ -103,7 +103,7 @@ export default function StudentAuthModal({
         {sessionName ? (
           <>
             <p className="eyebrow">Área del alumno</p>
-            <h2>¡Hola, {sessionName}!</h2>
+            <h2 style={{ fontSize: "clamp(24px, 4.5vw, 34px)", overflowWrap: "anywhere", wordBreak: "break-word" }}>¡Hola,<br />{sessionName}!</h2>
             {ok && <div className="auth-ok">{ok}</div>}
             <p style={{ color: "var(--muted)", fontSize: 14, margin: "0 0 20px" }}>
               Ya tenés tu sesión iniciada. Entrá a tu campus para ver tus cursos.

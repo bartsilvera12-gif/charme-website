@@ -24,7 +24,7 @@ export default function CampusHeader({ studentName }: { studentName: string }) {
       </nav>
       <div className="header-actions" style={{ gap: 16 }}>
         <span style={{ fontSize: 13, color: "var(--muted)" }}>{studentName}</span>
-        <button className="button button-dark" onClick={logout}>Salir</button>
+        <button className="button button-dark campus-logout" onClick={logout}>Salir</button>
       </div>
     </header>
   );

@@ -70,7 +70,7 @@ export default function PanelPage() {
             <p>Cuando la academia te inscriba en un curso, va a aparecer acá. <Link href="/#formaciones" style={{ color: "var(--champagne)" }}>Ver formaciones →</Link></p>
           </div>
         ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 24 }}>
+          <div className="campus-grid">
             {cards.map((c) => {
               const pct = c.total ? Math.round((c.done / c.total) * 100) : 0;
               return (

@@ -107,7 +107,7 @@ export default function CourseCampus({ slug }: { slug: string }) {
         <p style={{ color: "var(--muted)", fontSize: 13 }}>Progreso: {pct}% · {done.size}/{lessons.length} clases</p>
       </section>
 
-      <section className="section-shell" style={{ paddingBottom: 60, display: "grid", gridTemplateColumns: "minmax(0,1fr) 340px", gap: 28, alignItems: "start" }}>
+      <section className="section-shell campus-viewer" style={{ paddingBottom: 60 }}>
         {/* Reproductor + descripción */}
         <div>
           <div style={{ position: "relative", aspectRatio: "16/9", background: "#0c0a09", borderRadius: 14, overflow: "hidden" }}>
@@ -143,7 +143,7 @@ export default function CourseCampus({ slug }: { slug: string }) {
         </div>
 
         {/* Sidebar contenido */}
-        <aside style={{ border: "1px solid var(--line)", borderRadius: 14, background: "#fff", overflow: "hidden", position: "sticky", top: 20 }}>
+        <aside className="campus-sidebar" style={{ border: "1px solid var(--line)", borderRadius: 14, background: "#fff", overflow: "hidden", position: "sticky", top: 20 }}>
           <div style={{ padding: "18px 20px", borderBottom: "1px solid var(--line)" }}>
             <p style={{ fontFamily: "var(--serif)", fontSize: 18, margin: 0 }}>Contenido del curso</p>
             <p style={{ fontSize: 12, color: "var(--muted)", margin: "4px 0 0" }}>{modules.length} módulo(s) · {lessons.length} clase(s)</p>

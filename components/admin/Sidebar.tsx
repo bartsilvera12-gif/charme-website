@@ -20,6 +20,12 @@ const NAV = [
     ],
   },
   {
+    title: "Campus",
+    links: [
+      { href: "/admin/alumnos", label: "Alumnos", icon: "🎓", color: "#7bb0a0" },
+    ],
+  },
+  {
     title: "Sistema",
     links: [
       { href: "/admin/configuracion", label: "Configuración", icon: "⚙", color: "#9fb0c0" },

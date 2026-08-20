@@ -85,6 +85,7 @@ export default function FormacionesListPage() {
                     <td>{r.price ?? "—"}</td>
                     <td><button className={`adm-badge ${r.is_active ? "adm-badge-on" : "adm-badge-off"}`} style={{ border: 0, cursor: "pointer" }} onClick={() => toggle(r, "is_active")}>{r.is_active ? "Activa" : "Inactiva"}</button></td>
                     <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>
+                      <Link href={`/admin/formaciones/contenido?id=${r.id}`} className="adm-btn adm-btn-ghost" style={{ minHeight: 34, padding: "0 12px", marginRight: 6 }}>Contenido</Link>
                       <Link href={`/admin/formaciones/editar?id=${r.id}`} className="adm-btn adm-btn-ghost" style={{ minHeight: 34, padding: "0 12px", marginRight: 6 }}>Editar</Link>
                       <button className="adm-btn adm-btn-danger" style={{ minHeight: 34, padding: "0 12px" }} onClick={() => remove(r)}>Eliminar</button>
                     </td>

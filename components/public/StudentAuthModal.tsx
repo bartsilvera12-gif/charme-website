@@ -106,9 +106,9 @@ export default function StudentAuthModal({
             <h2>¡Hola, {sessionName}!</h2>
             {ok && <div className="auth-ok">{ok}</div>}
             <p style={{ color: "var(--muted)", fontSize: 14, margin: "0 0 20px" }}>
-              Ya tenés tu sesión iniciada en Academia CHARME.
+              Ya tenés tu sesión iniciada. Entrá a tu campus para ver tus cursos.
             </p>
-            <button className="button button-dark" style={{ width: "100%" }} onClick={onClose}>Continuar</button>
+            <a className="button button-dark" href="/panel" style={{ width: "100%", boxSizing: "border-box" }}>Ir a mi campus →</a>
             <div className="auth-switch">
               <button type="button" onClick={logout}>Cerrar sesión</button>
             </div>
